@@ -12,7 +12,7 @@
 (Делал через DBeaver на Greenplum, образ: projectairws/greenplum:latest)
 
 ### Описание содержимого
-##### src/etl_pipeline_script.py
+#### src/etl_pipeline_script.py
 
 1	Проверяет/создаёт БД dwh_dit_db
 
@@ -28,7 +28,7 @@
 
 7	Загружает данные в схему dds в Greenplum/PostgreSQL
 
-##### ddl/scripts_dwh_star.sql
+#### ddl/scripts_dwh_star.sql
 
 1 Удаление если есть/Создание схем dim (измерения) и fact (факты)
 
@@ -42,7 +42,7 @@
 - fact_events — события
 - fact_payments — платежи
 
-##### sql/view_mart_(4).sql
+#### sql/view_mart_(4).sql
 
 Выполнение 4 задания.
 
@@ -58,18 +58,19 @@ v_top5_last_activity	Последняя активность топ-5 покуп
 
 v_customers_without_orders	Клиенты, у которых нет ни одного заказа
 
-##### db/restore_db.sql.sql
+#### db/restore_db.sql.sql
 
 Копия моей db
 
-##### data/...
+#### data/...
 
 Таблицы с данными
 
 ### Порядок запуска
 
 - 1 Запускаем src/etl_pipeline_script.py
-- 2 Создаем подключение к примеру в DBeaver 
+- 2 Создаем подключение к примеру в DBeaver
+  
 Host	localhost
 
 Port	5432
