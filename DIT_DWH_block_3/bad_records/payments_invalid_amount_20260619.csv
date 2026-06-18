@@ -1,0 +1,35 @@
+payment_id,order_id,payment_method,amount,currency,payment_timestamp
+1,778,bank_transfer,error_amount,EUR,2025-04-14 23:23:52
+7,239,card,error_amount,EUR,2026-01-01 19:45:57
+14,187,bank_transfer,error_amount,USD,2026-04-22 23:43:11
+42,832,bank_transfer,error_amount,EUR,2025-11-06 01:02:23
+117,188,,error_amount,RUB,2025-03-09 23:15:50
+141,226,paypal,error_amount,RUB,2025-04-25 04:13:36
+179,291,,error_amount,RUB,2025-05-17 15:12:18
+213,818,bank_transfer,error_amount,RUB,2024-05-27 10:00:18
+225,225,bank_transfer,error_amount,EUR,2025-08-31 18:13:59
+232,94,bank_transfer,error_amount,USD,2024-07-11 14:46:17
+240,669,paypal,error_amount,EUR,2024-11-25 16:21:53
+296,281,bank_transfer,error_amount,EUR,2026-01-01 13:04:22
+359,605,paypal,error_amount,RUB,2025-05-04 22:33:29
+422,447,card,error_amount,USD,2024-09-21 15:00:18
+500,731,card,error_amount,EUR,2025-06-17 10:28:20
+563,891,bank_transfer,error_amount,USD,2025-02-16 16:18:19
+565,212,paypal,error_amount,RUB,2024-06-29 18:26:48
+610,702,card,error_amount,RUB,2026-03-29 04:34:03
+682,1040,bank_transfer,error_amount,RUB,2024-08-08 22:23:10
+686,935,card,error_amount,RUB,2025-12-08 05:46:51
+744,26,bank_transfer,error_amount,EUR,2025-08-27 03:25:32
+768,1138,,error_amount,USD,2025-07-01 23:54:52
+808,387,paypal,error_amount,USD,2025-11-13 02:52:25
+834,923,,error_amount,RUB,2025-02-21 11:47:36
+856,398,card,error_amount,RUB,2024-09-04 10:47:33
+860,136,,error_amount,RUB,2024-06-10 06:57:55
+865,457,bank_transfer,error_amount,RUB,2026-01-21 09:27:18
+870,640,paypal,error_amount,USD,2024-08-07 03:26:23
+928,331,paypal,error_amount,USD,13/45/2025
+937,808,paypal,error_amount,EUR,2024-10-09 15:58:16
+957,500,,error_amount,EUR,2025-10-31 13:34:40
+966,379,paypal,error_amount,USD,2025-09-15 15:53:01
+1,778,bank_transfer,error_amount,EUR,2025-04-14 23:23:52
+7,239,card,error_amount,EUR,2026-01-01 19:45:57
