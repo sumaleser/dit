@@ -1,0 +1,10 @@
+SELECT 
+    a.id AS id1,
+    b.id AS id2,
+    a.category
+FROM items a
+JOIN items b 
+    ON a.name = b.name 
+    AND a.category = b.category
+    AND a.id < b.id  -- Убираем дубли и одинаковые id
+ORDER BY a.id, b.id;

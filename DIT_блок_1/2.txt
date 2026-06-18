@@ -1,0 +1,20 @@
+with top_20_percent as (
+    select 
+        s.song_id, 
+        s.title, 
+        count(ll.user_id) as listens, 
+        ntile(5) over (order by count(ll.user_id) desc) as percentile_group
+    from songs s 
+    join listening_logs ll on ll.song_id = s.song_id
+    group by s.song_id, s.title
+)
+select 
+	ar.name, 
+	count(distinct top.song_id) as top_songs 
+from artists ar 
+join song_artists sa on sa.artist_id = ar.artist_id
+join top_20_percent top on top.song_id = sa.song_id
+where top.percentile_group = 1
+group by ar.name
+order by top_songs desc
+limit 1;

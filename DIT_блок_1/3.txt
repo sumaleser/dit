@@ -1,0 +1,30 @@
+with collab as (
+SELECT 
+	a.album_id, 
+	a.title as album,
+	a.artist_id,
+	ar.name as artist,
+	s.song_id, 
+	s.title, 
+	count(ar.artist_id) as cnt_artist
+from albums a
+join songs s using (album_id)
+join song_artists sa using (song_id)
+join artists ar using (artist_id)
+group by a.album_id, 
+	album, 
+	a.artist_id,
+	artist,
+	s.song_id, 
+	s.title
+having cnt_artist > 1
+)
+select
+	album_id,
+	album,
+	artist,
+	count(*) as collab_count
+from collab
+group by album_id, album, artist
+order by collab_count desc
+limit 1;

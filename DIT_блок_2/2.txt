@@ -1,0 +1,29 @@
+WITH RECURSIVE chains AS (
+    -- Базовый случай: все ID, которые НЕ являются чьими-то new_id
+    -- Это корни цепочек (начальные ID)
+    SELECT 
+        id,
+        id AS root_id,
+        id AS current_id,
+        0 AS depth
+    FROM users
+    WHERE id NOT IN (SELECT new_id FROM users)
+    
+    UNION ALL
+    
+    -- Рекурсивный случай: идём по цепочке от корня
+    SELECT 
+        u.id,
+        c.root_id,
+        u.new_id,
+        c.depth + 1
+    FROM chains c
+    JOIN users u ON c.current_id = u.id
+    WHERE c.depth < 10
+)
+-- Теперь у каждого ID есть root_id (минимальный ID в цепочке)
+SELECT DISTINCT
+    id,
+    root_id as new_id
+FROM chains
+ORDER BY id;

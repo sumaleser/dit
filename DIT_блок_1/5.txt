@@ -1,0 +1,8 @@
+select 
+	g.name as genre,
+	ll.region,
+    count(ll.user_id) as listens 
+from genres g
+join song_genres sg on g.genre_id = sg.genre_id
+join listening_logs ll on ll.song_id = sg.song_id
+group by genre, region

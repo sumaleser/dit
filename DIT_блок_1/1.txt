@@ -1,0 +1,25 @@
+with rock_songs as (
+select song_id, genre_id from song_genres sg where genre_id = 2 -- Rock
+)
+select 
+	album,
+    artist,
+    sum(listens) as listens
+from (
+	select 
+		a.album_id,
+		a.title as album,
+		a.artist_id,
+		ar.name as artist,
+		rs.song_id,
+		count(ll.user_id) as listens
+	from rock_songs rs
+	join songs s on rs.song_id = s.song_id
+	join listening_logs ll on s.song_id = ll.song_id
+	join albums a on a.album_id = s.album_id
+	join artists ar on ar.artist_id = a.artist_id
+	group by a.album_id, a.title, a.artist_id, ar.name, rs.song_id
+)
+group by album, artist
+order by listens desc
+limit 1;

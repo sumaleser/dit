@@ -1,0 +1,5 @@
+select 
+	strftime('%Y-%m', listen_time) AS year_month,
+    count(user_id) as listens
+from listening_logs
+group by year_month
